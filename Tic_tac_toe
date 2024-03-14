@@ -1,7 +1,5 @@
 #include <iostream> 
 using namespace std; 
-
-//  to draw the board 
 void drawBoard(char B[3][3]) 
 { 
 	for (int i = 0; i < 3; i++) { 
@@ -12,11 +10,8 @@ void drawBoard(char B[3][3])
 		cout << endl;
 	} 
 } 
-
-// Function to check for a win 
 bool checkWin(char B[3][3], char P) 
 { 
-	// Check rows, columns, and diagonals 
 	for (int i = 0; i < 3; i++) { 
 		if (B[i][0] == P && B[i][1] == P
 			&& B[i][2] == P) 
