@@ -4,11 +4,11 @@ int main()
 {
     int a,b,add,sub,ch;
     float pro,div;
-    cout<<"Please enter two numbers:";
-    cin>>a>>b;
-    cout<<"\n1.Addition \n2.Substraction \n3.Product \n4.Division ";
-    cout<<"\n Choose the operation:";
+ cout<<"\n Choose the operation:";
     cin>>ch;
+    cout<<"\n1.Addition \n2.Substraction \n3.Product \n4.Division ";
+       cout<<"Please enter two numbers:";
+    cin>>a>>b;
     switch(ch)
     {
         case 1:
