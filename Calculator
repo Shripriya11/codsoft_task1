@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a,b,add,sub,ch;
+    float pro,div;
+    cout<<"Please enter two numbers:";
+    cin>>a>>b;
+    cout<<"\n1.Addition \n2.Substraction \n3.Product \n4.Division ";
+    cout<<"\n Choose the operation:";
+    cin>>ch;
+    switch(ch)
+    {
+        case 1:
+         cout<<"Addition is:"<<a+b;
+         break;
+        case 2:
+         cout<<"Substraction is:"<<a-b;
+         break;
+        case 3:
+         cout<<"Product is:"<<a*b;
+         break;
+        case 4:
+         cout<<"Division is:"<<a/b;
+         break;
+        default:
+            cout << "Error! Your choice is not available";
+            break;
+    }
+
+    return 0;
+
+
+
+    }
