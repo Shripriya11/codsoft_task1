@@ -15,10 +15,10 @@ int main()
 		srand(time(0));
 		int secretNumber = 1 + (rand() % 100);
 		int playerChoice;
-			cout << "\nYou have 7 choices for finding the "
+			cout << "\nYou have 5 choices for finding the "
 					"secret number between 1 and 100.";
-			int choicesLeft = 7;
-			for (int i = 1; i <= 7; i++){
+			int choicesLeft = 5;
+			for (int i = 1; i <= 5; i++){
 				cout << "\n\nEnter the number: ";
 				cin >> playerChoice;
 				if (playerChoice == secretNumber) {
