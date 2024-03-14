@@ -1,0 +1,95 @@
+#include <iostream> 
+using namespace std; 
+
+//  to draw the board 
+void drawBoard(char B[3][3]) 
+{ 
+	for (int i = 0; i < 3; i++) { 
+		cout << "|"; 
+		for (int j = 0; j < 3; j++) { 
+			cout << B[i][j] << " | "; 
+		} 
+		cout << endl;
+	} 
+} 
+
+// Function to check for a win 
+bool checkWin(char B[3][3], char P) 
+{ 
+	// Check rows, columns, and diagonals 
+	for (int i = 0; i < 3; i++) { 
+		if (B[i][0] == P && B[i][1] == P
+			&& B[i][2] == P) 
+			return true; 
+		if (B[0][i] == P && B[1][i] == P 
+			&& B[2][i] == P) 
+			return true; 
+	} 
+	if (B[0][0] == P && B[1][1] == P 
+		&& B[2][2] == P) 
+		return true; 
+	if (B[0][2] == P && B[1][1] == P 
+		&& B[2][0] == P) 
+		return true; 
+	return false; 
+} 
+
+int main() 
+{ 
+	// Initialize the board and players 
+	char B[3][3] = { { ' ', ' ', ' ' }, 
+						{ ' ', ' ', ' ' }, 
+						{ ' ', ' ', ' ' } }; 
+	char P = 'X'; 
+	int row, col; 
+	int turn; // Declare turn here 
+
+	cout << "Welcome to Tic-Tac-Toe!\n"; 
+
+	// Game loop 
+	for (turn = 0; turn < 9; turn++) { 
+		// Draw the board 
+		drawBoard(B); 
+		while (true) {
+		    cout<<"\n If you want to add at:";
+		    cout<<"\n1.1st row 1st coloumn-press 0-enter-0.";
+		    cout<<"\n2.1st row 2nd coloumn-press 0-enter-1.";
+		    cout<<"\n3.1st row 3rd coloumn-press 0-enter-2.";
+		    cout<<"\n4.2nd row 1st coloumn-press 1-enter-0.";
+		    cout<<"\n5.2nd row 2nd coloumn press 1-enter-1.";
+		    cout<<"\n6.2nd row 3rd coloumn-press 1-enter-2.";
+		    cout<<"\n7.3rd row 1st coloumn-press 2-enter-0.";
+		    cout<<"\n8.3rd row 2nd coloumn-press 2-enter-1.";
+		    cout<<"\n9.3rd row 3rd coloumn-press 2-enter-2";
+			cout <<"\nPlayer " << P; 
+			cout<< ", enter row (0-2) and column (0-2): "; 
+			cin >> row >> col; 
+
+			if (B[row][col] != ' ' || row < 0 || row > 2 
+				|| col < 0 || col > 2) { 
+				cout << "Invalid move. Try again.\n"; 
+			} 
+			else { 
+				break;
+			} 
+		} 
+		B[row][col] = P;
+		if (checkWin(B, P)) { 
+			drawBoard(B); 
+			cout << "Player " << P << " wins!\n"; 
+			break; // Exit the loop after a win. 
+		} 
+
+		// Switch to the other player 
+		P = (P == 'X') ? 'O' : 'X'; 
+	} 
+
+	// End of the game 
+	drawBoard(B); 
+	if (turn == 9 && !checkWin(B, 'X') 
+		&& !checkWin(B, 'O')) { 
+		cout << "It's a draw!\n"; 
+	} 
+
+	return 0; 
+}
